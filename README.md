@@ -1,20 +1,182 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# 2025 黑五工具折扣精选 - A梦推荐
 
-# Run and deploy your AI Studio app
+大家好，我是 A梦，一个从设计师转型独立开发的创业者。
 
-This contains everything you need to run your app locally.
+每年黑五都是囤工具的好时机，今年我整理了自己长期使用或熟悉的 17 个工具的折扣信息，覆盖从信息处理、内容创作到产品开发的全链路。这些都是我实际用过或深度了解的工具，不是单纯的折扣汇总。
 
-View your app in AI Studio: https://ai.studio/apps/drive/15C65hj6qSKfM7QpEpN2A6vfO8YhPdvvt
+![2025黑五折扣清单公众号封面](https://cdn.gooo.ai/gen-images/ce691685750085a752e8023782b8af13abe6ad2870b621e68f446fe9f0aabc79.png)
 
-## Run Locally
+> **重要提示**：大部分折扣都限时，最快的 11.30 就会过期，赶紧保存下来赶紧用，晚了折扣可能就过期了！
 
-**Prerequisites:**  Node.js
+## 目录
 
+- 📥 信息输入与处理
+- 🎨 创作者工具
+- ⚡ 效率工具
+- 💻 产品开发
+- 🔗 其他优质推荐
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+## 📥 信息输入与处理
+
+### BibiGPT
+AI 音视频助理，我学习 YouTube 视频的主力工具。可以快速总结视频内容并生成各种辅助学习媒介，比如思维导图、文章大纲等。
+
+![BibiGPT](https://cdn.gooo.ai/web-images/3e667251b0c93c82adda0d495cf0818fca6daf386518b23aca25168970076dbc)
+
+*   **折扣码**：`BF2025`（五折）
+*   **注册链接**：[点击直达](https://bibigpt.co/r/inZGHm)
+*   **备注**：我是年付用户，这次五折力度确实不错。
+
+### Podwise
+播客学习助手，帮你快速提取播客核心内容，支持生成摘要和知识卡片。支持网页版和手机端。
+
+![Podwise](https://cdn.gooo.ai/web-images/87bad42bbd06eaa807cd8e633a463f75fd0ba912856fe274309b22413eaa4806)
+
+*   **折扣码**：`BF2025`（6折优惠）
+*   **链接**：[点击直达](https://podwise.ai/)
+
+### Quill Meetings
+我一直在用的录音转文字工具。参加会议时我习惯打开它录制，电脑端可以添加额外笔记和截图。
+
+![Quill Meetings](https://cdn.gooo.ai/web-images/e427a4a1b728386d27bd675da54d717af4f8461629cc801119abac7a4aab82dd)
+
+*   **折扣码**：`DYLAN20`（优惠20刀）
+*   **链接**：[获取 12 小时时长](https://quillmeetings.com/?rc=yVR6Uz7T-eMvCQiU8-LSL7ejUH-4soJEGkzz)
+
+### Eagle
+最好用的素材管理软件之一，一次付费终身授权永久免费更新。
+
+![Eagle](https://cdn.gooo.ai/web-images/b48dae0405710f2a59052244939e3ce8565333a09af955126d6332aeb82c4b73)
+
+*   **黑五价格**：¥160.3（两台设备，7折）
+*   **链接**：[点击直达](https://cn.eagle.cool/)
+
+### Craft
+非常精致的笔记软件，支持多终端同步。界面美观，适合收集和整理信息。
+
+![Craft](https://cdn.gooo.ai/web-images/c55b08b825875b73733f15c06cc6172a4f2872e84c092f7d378a6593b54a1bc9)
+
+*   **折扣**：Lite 版 ¥239.4/年，Plus 版 ¥419.4/年
+*   **链接**：[点击直达](https://www.craft.do/zh-CN/pricing)
+
+---
+
+## 🎨 创作者工具
+
+### YouMind
+支付宝前端大神玉伯老师的创业产品。AI 辅助创作与思维梳理工具。
+
+![YouMind](https://cdn.gooo.ai/web-images/87ce9ed4a44f55780156bce8f278fc6818abd423ea01030250d85bdfdf82cec1)
+
+*   **折扣码**：`BLACKGIFT`（五折优惠）
+*   **注册链接**：[点击直达](https://youmind.com/invite/99839A)
+
+### Screen Studio
+专业级录屏工具，特别适合制作教程和演示视频。自动生成平滑缩放和鼠标跟随效果。
+
+![Screen Studio](https://cdn.gooo.ai/web-images/04bdf939f8a5a60b9f60672be4e7241f0937f6db2723a7685cdd7b617b156b43)
+
+*   **折扣码**：`BLACKFRIDAY25`
+*   **链接**：[点击直达](https://screenstudio.lemonsqueezy.com?aff=Y69ZZ)
+
+### CleanShot X for Mac
+我长年使用的截图录屏工具，非常全能，可能是最好的 Mac 截屏软件之一。
+
+![CleanShot X](https://cdn.gooo.ai/web-images/a7d115bd32614d71cd00e757cc3976b66de6a9b94c416571e183d809911828e5)
+
+*   **买断优惠价**：$20.30
+*   **链接**：[点击直达](https://cleanshot.com/)
+
+### Lovart
+设计智能体，支持无限画板上的图片生成操作，也支持单独使用各种生图模型。
+
+![Lovart](https://cdn.gooo.ai/web-images/d3ebf58c4543541d3294166df157e17911fa13c2fd5adccdc5fe46b5e2243a9f)
+
+*   **折扣**：年付 4 折（截止 11.30）
+*   **链接**：[点击直达](https://www.lovart.ai/zh/home)
+
+---
+
+## ⚡ 效率工具
+
+### Things 3
+优雅的任务管理工具，Mac/iOS 生态的经典选择。
+
+![Things](https://cdn.gooo.ai/web-images/40881e3c198828f26a65a6b87c962cbdce63fdfcf4a225aedce97c2e1b51b9bb)
+
+*   **折扣**：应用市场已包含 7 折折扣
+
+### Paste
+非常强大的剪贴板历史工具，可视化管理剪贴板历史。
+
+![Paste](https://cdn.gooo.ai/web-images/cc7d51713b0055d906721f561cacb1afc282bd6829dc33f1afd75b4a65ad5c1a)
+
+*   **折扣码**：`BLACKFRIDAY2025` ($14.99/年)
+*   **链接**：[点击直达](https://pasteapp.io/)
+
+### Setapp
+Mac/iOS 应用订阅服务，一站式获取 240+ 款优质应用。
+
+![Setapp](https://cdn.gooo.ai/web-images/eb27fe73ed9f3adc2e9d35e301732c7f8f15d024ebcd330edfbbb9665f6a9e88)
+
+*   **备注**：推荐拼车家庭版订阅。
+*   **链接**：[点击直达](https://setapp.com/)
+
+---
+
+## 💻 产品开发
+
+### 智普 GLM Coding
+智普的 Coding 套餐，支持 Claude Code、Cline 等 10+ 编程工具无缝支持。
+
+![GLM Coding](https://cdn.gooo.ai/web-images/a86b3064d9dbf66bf53ee94d5ba350a7f6d95a94bd04d71e2ebe9bf052d14284)
+
+*   **新用户链接**（立减 10%）：[点击直达](https://www.bigmodel.cn/claude-code?ic=RJCI1QREZ8)
+
+### MKSaaS
+非常好用的快速建站模版，帮助快速搭建 AI SaaS 产品。
+
+![MKSaaS](https://cdn.gooo.ai/web-images/2ef75c432f562f007253b5fa68f61f010e31d88ef7dccd2008d9aedef18d3d88)
+
+*   **折扣码**：`202511`（优惠 30 刀）
+*   **链接**：[点击直达](https://mksaas.com?atp=ameng)
+
+### Magic UI Pro
+基于 Next.js 的前端 UI 组件库，适合快速搭建现代化界面。
+
+![Magic UI](https://cdn.gooo.ai/web-images/22e4d33bbd75e497bfe187da63d519722e1bbc024e5915bd67f9042905644851)
+
+*   **折扣码**：`BLA2025Z5I`（五折优惠）
+*   **链接**：[点击直达](https://pro.magicui.design/?ref=ameng)
+
+### Tailark Pro
+Tailwind CSS 组件库，提供开箱即用的高质量组件。
+
+![Tailark](https://cdn.gooo.ai/web-images/867f77551a9965f8d67ec9717dde0809155d83964e4e30a40f87a3c0013f0bfe)
+
+*   **折扣**：五折优惠
+*   **链接**：[点击直达](https://pro.tailark.com/)
+
+### Aceternity UI PRO
+高质量 UI 组件库，提供 12+ 模板和 60+ 组件。
+
+![Aceternity](https://cdn.gooo.ai/web-images/2dcf61620369f2aaa970cfee503770cf989aaf8b3600b151a95d4b130da0a841)
+
+*   **折扣**：Lifetime 折后 $159.2（8折）
+*   **链接**：[点击直达](https://pro.aceternity.com/?ref=ameng)
+
+---
+
+## 🔗 其他优质推荐
+
+*   **[给设计师的黑五清单](https://dex.notion.site/Black-Friday-2025-for-designers-2b6fcc338e8b80e0aa12dd4fc1a127e9)** - 由 dingyi 整理。
+*   **[Awesome Black Friday](https://github.com/trungdq88/Awesome-Black-Friday-Cyber-Monday)** - Github 上非常全面的黑五折扣清单。
+
+---
+
+**关于作者**
+
+我是 A梦，一个从设计师转型独立开发的创业者，边学边实践边分享。
+如果你也对做 AI Web 站、做 AI 出海工具感兴趣，欢迎关注我的博客 [ameng.blog](https://ameng.blog)。
