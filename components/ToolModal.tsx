@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
-import { X, ExternalLink, Copy, Check, Tag, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ExternalLink, Copy, Check, Tag, Quote, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { Tool, Category } from '../types';
 
 interface ToolModalProps {
@@ -29,9 +29,16 @@ const ToolModal: React.FC<ToolModalProps> = ({
   hasNext = false 
 }) => {
   const [copied, setCopied] = useState(false);
+  const [previewImage, setPreviewImage] = useState<string | null>(null);
 
   // Keyboard navigation
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (previewImage) {
+      if (e.key === 'Escape') {
+        setPreviewImage(null);
+      }
+      return;
+    }
     if (e.key === 'ArrowLeft' && hasPrev && onPrev) {
       onPrev();
     } else if (e.key === 'ArrowRight' && hasNext && onNext) {
@@ -39,20 +46,33 @@ const ToolModal: React.FC<ToolModalProps> = ({
     } else if (e.key === 'Escape') {
       onClose();
     }
-  }, [hasPrev, hasNext, onPrev, onNext, onClose]);
+  }, [hasPrev, hasNext, onPrev, onNext, onClose, previewImage]);
 
   useEffect(() => {
     if (tool) {
+      // 更强的滚动锁定，防止移动端滚动穿透
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = 'unset';
+      
+      return () => {
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        document.body.style.overflow = '';
+        window.scrollTo(0, scrollY);
+        window.removeEventListener('keydown', handleKeyDown);
+      };
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-      window.removeEventListener('keydown', handleKeyDown);
-    };
   }, [tool, handleKeyDown]);
+
+  // Reset image preview when tool changes
+  useEffect(() => {
+    setPreviewImage(null);
+  }, [tool?.id]);
 
   if (!tool) return null;
 
@@ -64,9 +84,32 @@ const ToolModal: React.FC<ToolModalProps> = ({
     }
   };
 
+  // Image Preview Modal
+  if (previewImage) {
+    return (
+      <div 
+        className="fixed inset-0 z-[60] flex items-center justify-center bg-black/95 p-4"
+        onClick={() => setPreviewImage(null)}
+      >
+        <button 
+          onClick={() => setPreviewImage(null)}
+          className="absolute top-4 right-4 p-3 bg-white/10 hover:bg-white/20 rounded-full text-white transition-colors z-10"
+        >
+          <X size={24} />
+        </button>
+        <img 
+          src={previewImage} 
+          alt={tool.name} 
+          className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        />
+      </div>
+    );
+  }
+
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overscroll-contain"
       onClick={onClose}
     >
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" />
@@ -89,7 +132,7 @@ const ToolModal: React.FC<ToolModalProps> = ({
         
         {/* Modal Content */}
         <div 
-          className="relative bg-bf-card w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 shadow-2xl flex flex-col"
+          className="relative bg-bf-card w-full max-w-2xl max-h-[85vh] overflow-y-auto overscroll-contain rounded-2xl border border-white/10 shadow-2xl flex flex-col"
           onClick={(e) => e.stopPropagation()}
         >
         {/* Close Button */}
@@ -100,14 +143,22 @@ const ToolModal: React.FC<ToolModalProps> = ({
           <X size={20} />
         </button>
 
-        {/* Image Header */}
-        <div className="relative aspect-video w-full shrink-0">
+        {/* Image Header - Clickable for preview */}
+        <div 
+          className="relative aspect-video w-full shrink-0 cursor-pointer group/img"
+          onClick={() => setPreviewImage(tool.imageUrl)}
+        >
           <img 
             src={tool.imageUrl} 
             alt={tool.name} 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-[1.02]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-bf-card via-transparent to-transparent opacity-80" />
+          
+          {/* Zoom hint */}
+          <div className="absolute top-4 left-4 p-2 bg-black/50 rounded-full text-white/70 opacity-0 group-hover/img:opacity-100 transition-opacity">
+            <ZoomIn size={18} />
+          </div>
           
           <div className="absolute bottom-4 left-6 right-6">
             <span className="inline-block px-2 py-1 mb-2 rounded text-xs font-bold bg-bf-gold text-black shadow-lg">
@@ -135,6 +186,31 @@ const ToolModal: React.FC<ToolModalProps> = ({
               <p key={index}>{paragraph}</p>
             ))}
           </div>
+
+          {/* Additional Images Gallery */}
+          {tool.images && tool.images.length > 0 && (
+            <div className="space-y-3">
+              <h3 className="text-sm font-medium text-gray-400">更多截图</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {tool.images.map((img, index) => (
+                  <div 
+                    key={index}
+                    className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group/thumb border border-white/10 hover:border-bf-gold/50 transition-colors"
+                    onClick={() => setPreviewImage(img)}
+                  >
+                    <img 
+                      src={img} 
+                      alt={`${tool.name} 截图 ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover/thumb:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover/thumb:bg-black/20 transition-colors flex items-center justify-center">
+                      <ZoomIn size={20} className="text-white opacity-0 group-hover/thumb:opacity-100 transition-opacity" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* A-Meng's Note */}
           {tool.note && (

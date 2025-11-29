@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShoppingBag, Sparkles, Clock, Globe, Twitter, MessageCircle } from 'lucide-react';
+import { ShoppingBag, Sparkles, Clock, Globe, Twitter, MessageCircle, BookOpen } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
@@ -70,6 +70,17 @@ const Hero: React.FC = () => {
           <span className="text-white font-semibold"> 17 个工具</span>，
           覆盖从信息处理、内容创作到产品开发的全链路。
         </p>
+
+        <a 
+          href="https://mp.weixin.qq.com/s/qOQMonmNsnVKXdl7wzG-3g"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-bf-gold hover:text-yellow-300 transition-colors text-sm font-medium group"
+        >
+          <BookOpen size={16} />
+          <span>偏好阅读模式？查看公众号文章版</span>
+          <span className="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 text-sm text-gray-500">
           <div className="flex items-center gap-2 bg-bf-card/50 px-4 py-2 rounded-lg border border-white/5">

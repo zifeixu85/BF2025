@@ -14,6 +14,7 @@ export interface Tool {
   description: string;
   longDescription?: string;
   imageUrl: string;
+  images?: string[];  // 额外的详情图片
   icon?: string;
   discount: string;
   discountCode?: string;

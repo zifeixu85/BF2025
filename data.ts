@@ -38,11 +38,15 @@ export const TOOLS: Tool[] = [
     description: '录音转文字工具，支持添加笔记、截图和标记关键内容。',
     longDescription: '我一直在用的录音转文字工具。参加会议时我习惯打开它录制，电脑端可以添加额外笔记和截图，甚至点击羽毛符号快速标记关键语音内容，回顾时会着重标记。\n\n我最喜欢的是它的模板库，可以基于录音生成各种笔记，格式友好内容详实。可惜的是手机端只能录制，无法同步记笔记，且只能同步到电脑端使用。\n\n其实它没有黑五折扣，但我找到了一个可用的折扣码，能优惠 20 刀，建议用来购买 50 小时录制时长。\n\nP.S. 其实 Granola 的手机版现在也不错，支持中文且可边录制边记笔记，可惜的是桌面端还不支持。',
     imageUrl: 'https://cdn.gooo.ai/web-images/e427a4a1b728386d27bd675da54d717af4f8461629cc801119abac7a4aab82dd',
+    images: [
+      'https://cdn.gooo.ai/web-images/24e3e0497440fe797e904c39f2dcd3d18fecbc7bb76e23ea481b6a451741b222',
+      'https://cdn.gooo.ai/web-images/a0afa7455d4c4bb4852d798d2d3e7300f974693b054fef6c2b19baaab6662005'
+    ],
     icon: getIcon('quillmeetings.com'),
     discount: '优惠 $20',
     discountCode: 'DYLAN20',
     link: 'https://quillmeetings.com/?rc=yVR6Uz7T-eMvCQiU8-LSL7ejUH-4soJEGkzz',
-    note: '虽无官方黑五折扣，但此优惠码可用，建议购买50小时时长。'
+    note: '虽无官方黑五折扣，但此优惠码可用立减20刀，最建议是购买50小时时长（29刀优惠后9刀），性价比非常高。通过下方链接注册可获赠12小时，好用了再去买。'
   },
   {
     id: 'eagle',
@@ -51,9 +55,12 @@ export const TOOLS: Tool[] = [
     description: '最好用的素材管理软件之一，一次付费终身授权。',
     longDescription: '最好用的素材管理软件之一，我用了很多年。一次付费终身授权永久免费更新，非常良心。\n\n现在支持非常多的格式，已经超脱设计师使用范畴，新媒体内容制作、AIGC 素材整理都可以用。对于素材整理有非常多的手段，可以很方便地整理各种 AIGC 素材。',
     imageUrl: 'https://cdn.gooo.ai/web-images/b48dae0405710f2a59052244939e3ce8565333a09af955126d6332aeb82c4b73',
+    images: [
+      'https://cdn.gooo.ai/web-images/583c278cf53b5b3d5caf5071426ca3f5bc1412499261cbc903c4f3870dcdafa8'
+    ],
     icon: getIcon('eagle.cool'),
     discount: '¥160.3 (7折)',
-    price: '原价 ¥229',
+    price: '原价 ¥229 → 折后 ¥160.3',
     link: 'https://cn.eagle.cool/',
     note: '两台设备授权，非常良心。'
   },
@@ -65,7 +72,8 @@ export const TOOLS: Tool[] = [
     longDescription: '非常精致的笔记软件，支持多终端同步。界面美观，适合收集和整理信息。\n\n还有很多我在用的笔记类工具没有提供黑五折扣，感兴趣的也可以去看看：Heptabase、Tana、Bear。',
     imageUrl: 'https://cdn.gooo.ai/web-images/c55b08b825875b73733f15c06cc6172a4f2872e84c092f7d378a6593b54a1bc9',
     icon: getIcon('craft.do'),
-    discount: 'Pro版 ¥239.4/年',
+    discount: '黑五特惠',
+    price: 'Lite ¥239.4/年 | Plus ¥419.4/年',
     link: 'https://www.craft.do/zh-CN/pricing',
     note: '我通过 Setapp（下文会提到）订阅使用，如果你打算用 Setapp，就没必要单独买了。'
   },
@@ -78,6 +86,9 @@ export const TOOLS: Tool[] = [
     description: '玉伯老师创业产品，AI 辅助创作与思维梳理工具。',
     longDescription: '支付宝前端大神玉伯老师的创业产品，我从创业初期就开始关注（非常早期的付费用户）。现在版本已经很好用了，最近的一些文章创作我已经从 Obsidian 转移到 YouMind。\n\n比如你现在看到的这篇文章就是我在 YouMind 里面创作，左侧是我收集的黑五折扣信息，右侧是我让 AI 帮送我梳理，中间就是我的创作区域。配图也是直接全文一次性生成插入，按照统一的图片规范。接下来也会找时间写 YouMind 的使用分享，不知道这个大家感兴趣吗？',
     imageUrl: 'https://cdn.gooo.ai/web-images/87ce9ed4a44f55780156bce8f278fc6818abd423ea01030250d85bdfdf82cec1',
+    images: [
+      'https://cdn.gooo.ai/web-images/1b51ce5a77788779b89022ec47e3c9f5794d81a11f7ab1759ac8df37dafdbd1e'
+    ],
     icon: getIcon('youmind.com'),
     discount: '五折优惠',
     discountCode: 'BLACKGIFT',
@@ -92,7 +103,7 @@ export const TOOLS: Tool[] = [
     longDescription: '专业级录屏工具，特别适合制作教程和演示视频。你看到演示桌面操作的时候，右下角出来圆角头像的视频，基本都是这款工具剪辑出来，而且整个操作非常简单傻瓜化。\n\n当然现在也有不少人依照这个产品做了独立产品出来，在定位上有一些不同，如果适合自己也可以考虑。',
     imageUrl: 'https://cdn.gooo.ai/web-images/04bdf939f8a5a60b9f60672be4e7241f0937f6db2723a7685cdd7b617b156b43',
     icon: getIcon('screen.studio'),
-    discount: '黑五特惠',
+    discount: '六折优惠',
     discountCode: 'BLACKFRIDAY25',
     link: 'https://screenstudio.lemonsqueezy.com?aff=Y69ZZ',
     note: '演示视频神器，操作非常简单傻瓜化。'
@@ -170,7 +181,7 @@ export const TOOLS: Tool[] = [
     longDescription: '智普的 Coding 套餐，配合 Claude Code 使用也很不错。支持 Claude Code、Cline 等 10+ 编程工具无缝支持。\n\nP.S. 我自己还在使用官方 Claude Code 100美金套餐，所以暂时没用这个。',
     imageUrl: 'https://cdn.gooo.ai/web-images/a86b3064d9dbf66bf53ee94d5ba350a7f6d95a94bd04d71e2ebe9bf052d14284',
     icon: getIcon('bigmodel.cn'),
-    discount: '立减 10%',
+    discount: '五折优惠',
     link: 'https://www.bigmodel.cn/claude-code?ic=RJCI1QREZ8',
     note: 'AI 产品变化太快，不建议年付，季付比较合适。'
   },
@@ -223,6 +234,6 @@ export const TOOLS: Tool[] = [
     discount: '8折优惠',
     price: '$159.2 (终身)',
     link: 'https://pro.aceternity.com/?ref=ameng',
-    note: '我自己也非常喜欢这套组件库，想着如果有人愿意一起拼个单，可以后台联系我。'
+    note: '我自己也非常喜欢这套组件库，非常推荐。'
   }
 ];

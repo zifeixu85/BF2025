@@ -78,7 +78,7 @@ AI 音视频助理，我学习 YouTube 视频的主力工具。可以快速总�
 
 ![Screen Studio](https://cdn.gooo.ai/web-images/04bdf939f8a5a60b9f60672be4e7241f0937f6db2723a7685cdd7b617b156b43)
 
-*   **折扣码**：`BLACKFRIDAY25`
+*   **折扣码**：`BLACKFRIDAY25`（六折优惠）
 *   **链接**：[点击直达](https://screenstudio.lemonsqueezy.com?aff=Y69ZZ)
 
 ### CleanShot X for Mac
@@ -133,7 +133,8 @@ Mac/iOS 应用订阅服务，一站式获取 240+ 款优质应用。
 
 ![GLM Coding](https://cdn.gooo.ai/web-images/a86b3064d9dbf66bf53ee94d5ba350a7f6d95a94bd04d71e2ebe9bf052d14284)
 
-*   **新用户链接**（立减 10%）：[点击直达](https://www.bigmodel.cn/claude-code?ic=RJCI1QREZ8)
+*   **折扣**：五折优惠
+*   **新用户链接**：[点击直达](https://www.bigmodel.cn/claude-code?ic=RJCI1QREZ8)
 
 ### MKSaaS
 非常好用的快速建站模版，帮助快速搭建 AI SaaS 产品。
