@@ -53,6 +53,16 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative max-w-4xl mx-auto text-center space-y-6">
+        {/* Logo */}
+        <div className="flex justify-center mb-2">
+          <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-bf-black border-2 border-bf-gold shadow-[0_0_30px_rgba(255,215,0,0.3)] flex items-center justify-center">
+            <svg className="w-10 h-10 md:w-12 md:h-12" viewBox="0 0 32 32" fill="none">
+              <path d="M18 4l-6 10h4l-2 10 8-12h-5l4-8h-3z" fill="#FFD700"/>
+              <text x="3" y="28" fontFamily="Arial Black, sans-serif" fontSize="9" fontWeight="bold" fill="#FFD700">BF</text>
+            </svg>
+          </div>
+        </div>
+
         <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-bf-gold/10 border border-bf-gold/20 text-bf-gold text-sm font-medium mb-4">
           <Sparkles size={14} />
           <span>Black Friday 2025 Toolkit</span>
