@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
         </h1>
 
         <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
-          我是 A梦。每年黑五都是囤工具的好时机，我整理了自己长期使用或熟悉的 
+          我是 A梦，从交互设计师转型独立产品开发。今年黑五我整理了自己长期使用或熟悉的 
           <span className="text-white font-semibold"> 17 个工具</span>，
           覆盖从信息处理、内容创作到产品开发的全链路。
         </p>

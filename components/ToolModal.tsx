@@ -1,11 +1,15 @@
 
-import React, { useEffect, useState } from 'react';
-import { X, ExternalLink, Copy, Check, Tag, Quote } from 'lucide-react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { X, ExternalLink, Copy, Check, Tag, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Tool, Category } from '../types';
 
 interface ToolModalProps {
   tool: Tool | null;
   onClose: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+  hasPrev?: boolean;
+  hasNext?: boolean;
 }
 
 const CATEGORY_MAP: Record<string, string> = {
@@ -16,19 +20,39 @@ const CATEGORY_MAP: Record<string, string> = {
   [Category.ALL]: '全部'
 };
 
-const ToolModal: React.FC<ToolModalProps> = ({ tool, onClose }) => {
+const ToolModal: React.FC<ToolModalProps> = ({ 
+  tool, 
+  onClose, 
+  onPrev, 
+  onNext, 
+  hasPrev = false, 
+  hasNext = false 
+}) => {
   const [copied, setCopied] = useState(false);
+
+  // Keyboard navigation
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'ArrowLeft' && hasPrev && onPrev) {
+      onPrev();
+    } else if (e.key === 'ArrowRight' && hasNext && onNext) {
+      onNext();
+    } else if (e.key === 'Escape') {
+      onClose();
+    }
+  }, [hasPrev, hasNext, onPrev, onNext, onClose]);
 
   useEffect(() => {
     if (tool) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [tool]);
+  }, [tool, handleKeyDown]);
 
   if (!tool) return null;
 
@@ -47,10 +71,27 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, onClose }) => {
     >
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity" />
       
-      <div 
-        className="relative bg-bf-card w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 shadow-2xl flex flex-col"
-        onClick={(e) => e.stopPropagation()}
-      >
+      {/* Modal with arrows container */}
+      <div className="relative z-10 flex items-center gap-4 max-w-[95vw]">
+        {/* Left Arrow - Hidden on mobile */}
+        <button
+          onClick={(e) => { e.stopPropagation(); hasPrev && onPrev && onPrev(); }}
+          className={`hidden sm:flex shrink-0 p-3 rounded-full transition-all shadow-lg backdrop-blur-sm border ${
+            hasPrev 
+              ? 'bg-black/60 hover:bg-bf-gold text-white/70 hover:text-black border-white/10 hover:border-bf-gold cursor-pointer' 
+              : 'bg-black/30 text-white/20 border-white/5 cursor-not-allowed'
+          }`}
+          title="上一个 (←)"
+          disabled={!hasPrev}
+        >
+          <ChevronLeft size={24} />
+        </button>
+        
+        {/* Modal Content */}
+        <div 
+          className="relative bg-bf-card w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 shadow-2xl flex flex-col"
+          onClick={(e) => e.stopPropagation()}
+        >
         {/* Close Button */}
         <button 
           onClick={onClose}
@@ -154,6 +195,21 @@ const ToolModal: React.FC<ToolModalProps> = ({ tool, onClose }) => {
             </a>
           </div>
         </div>
+        </div>
+        
+        {/* Right Arrow - Hidden on mobile */}
+        <button
+          onClick={(e) => { e.stopPropagation(); hasNext && onNext && onNext(); }}
+          className={`hidden sm:flex shrink-0 p-3 rounded-full transition-all shadow-lg backdrop-blur-sm border ${
+            hasNext 
+              ? 'bg-black/60 hover:bg-bf-gold text-white/70 hover:text-black border-white/10 hover:border-bf-gold cursor-pointer' 
+              : 'bg-black/30 text-white/20 border-white/5 cursor-not-allowed'
+          }`}
+          title="下一个 (→)"
+          disabled={!hasNext}
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
     </div>
   );

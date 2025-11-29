@@ -30,6 +30,31 @@ function App() {
   
   // Ref to store section offsets for scroll spy
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
+  // Flat list of all tools in display order for modal navigation
+  const allToolsInOrder = DISPLAY_CATEGORIES.flatMap(
+    category => TOOLS.filter(t => t.category === category)
+  );
+
+  // Get current tool index and navigation helpers
+  const currentToolIndex = selectedTool 
+    ? allToolsInOrder.findIndex(t => t.id === selectedTool.id)
+    : -1;
+  
+  const hasPrevTool = currentToolIndex > 0;
+  const hasNextTool = currentToolIndex >= 0 && currentToolIndex < allToolsInOrder.length - 1;
+
+  const goToPrevTool = () => {
+    if (hasPrevTool) {
+      setSelectedTool(allToolsInOrder[currentToolIndex - 1]);
+    }
+  };
+
+  const goToNextTool = () => {
+    if (hasNextTool) {
+      setSelectedTool(allToolsInOrder[currentToolIndex + 1]);
+    }
+  };
   const isScrollingRef = useRef(false);
 
   // Scroll to specific category
@@ -207,7 +232,11 @@ function App() {
       {/* Detail Modal */}
       <ToolModal 
         tool={selectedTool} 
-        onClose={() => setSelectedTool(null)} 
+        onClose={() => setSelectedTool(null)}
+        onPrev={goToPrevTool}
+        onNext={goToNextTool}
+        hasPrev={hasPrevTool}
+        hasNext={hasNextTool}
       />
     </div>
   );

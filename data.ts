@@ -23,7 +23,7 @@ export const TOOLS: Tool[] = [
     name: 'Podwise',
     category: Category.INFO,
     description: '播客学习助手，提取核心内容，支持生成摘要和知识卡片。',
-    longDescription: '播客学习助手，帮你快速提取播客核心内容，支持生成摘要和知识卡片。支持网页版和手机端，手机端几乎可以直接替换掉现有的播客软件了。\n\n但是因为有了上面的工具，所以这个我用的少，如果有经常听英文播客习惯，推荐使用。',
+    longDescription: '播客学习助手，帮你快速提取播客核心内容，支持生成摘要和知识卡片。支持网页版和手机端，手机端几乎可以直接替换掉现有的播客软件了。\n\n如果有经常听英文播客习惯，推荐使用。',
     imageUrl: 'https://cdn.gooo.ai/web-images/87bad42bbd06eaa807cd8e633a463f75fd0ba912856fe274309b22413eaa4806',
     icon: getIcon('podwise.ai'),
     discount: '6折优惠',
