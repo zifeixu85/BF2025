@@ -74,7 +74,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 text-sm text-gray-500">
           <div className="flex items-center gap-2 bg-bf-card/50 px-4 py-2 rounded-lg border border-white/5">
             <Clock size={16} className="text-bf-accent" />
-            <span>大部分折扣 11.30 过期</span>
+            <span>限时折扣尽早下单</span>
           </div>
           <div className="flex items-center gap-2 bg-bf-card/50 px-4 py-2 rounded-lg border border-white/5">
             <ShoppingBag size={16} className="text-blue-400" />
