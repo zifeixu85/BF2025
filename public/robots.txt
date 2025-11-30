@@ -1,0 +1,7 @@
+# robots.txt for bf2025.ameng.me
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bf2025.ameng.studio/sitemap.xml
+
